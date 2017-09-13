@@ -13,6 +13,7 @@
 
 
 {% block content %}
+<a class="ui button" href="{% url 'index' %}">Back</a>
 <h1 class="ui header">Annotate the sound</h1>
 <div>
     <div>
@@ -20,8 +21,8 @@
     </div>
     <div id="form_container">
     </div>
-    <button id="content_type_button" onclick="select_content_type();">Next</button>
-    <button id="submit_button" onclick="collect_all();" style="display:none;">Submit</button>
+    <a class="ui button" id="content_type_button" onclick="select_content_type();">Next</a>
+    <a class="ui button" id="submit_button" onclick="collect_all();" style="display:none;">Submit</a>
 </div>
 {% endblock %}
 

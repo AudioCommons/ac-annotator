@@ -23,6 +23,6 @@ from music_annotator.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
-    url(r'^annotate/', annotate, name='annotate-sound'),
+    url(r'^annotate/(?P<fsid>[^\/]+)/$', annotate, name='annotate-sound'),
 ]
 

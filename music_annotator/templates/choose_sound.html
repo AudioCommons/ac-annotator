@@ -16,7 +16,7 @@
                 {% for fsid in freesound_ids %}
                     <tr>
                         <td>{{ fsid | fs_embed | safe }}</td>
-                        <td><a class="ui button" href="" target="_blank">Annotate</a></td>
+                        <td><a class="ui button" href="{% url 'annotate-sound' fsid %}">Annotate</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

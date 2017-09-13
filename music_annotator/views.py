@@ -9,15 +9,14 @@ def index(request):
 
 
 @csrf_exempt
-def annotate(request):
+def annotate(request, fsid):
     if request.method == 'POST':
         print(request.POST)
 
-    sound_id = '181425'  # select a hardcoded sound id for now
     # create a fake schema for now
     schema_dict = {'content_types': {'note': ['note', 'instrument'], 'chord': ['chord', 'instrument']},
                    'proprieties': {'note': ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
                                    'instrument': ['piano', 'guitar', 'violin'],
                                    'chord': ['A', 'B', 'C']}}
     json_string = json.dumps(schema_dict)
-    return render(request, 'annotate.html', {'schema': json_string, 'sound_id': sound_id})
+    return render(request, 'annotate.html', {'schema': json_string, 'sound_id': fsid})
