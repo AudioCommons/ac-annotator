@@ -15,8 +15,9 @@ def annotate(request):
 
     sound_id = '181425'  # select a hardcoded sound id for now
     # create a fake schema for now
-    schema_dict = {'content_types': {'note': ['note', 'instrument']},
-                   'proprieties': {'note': ['A', 'B', 'C'],
-                                   'instrument': ['drums', 'guitar', 'violin']}}
+    schema_dict = {'content_types': {'note': ['note', 'instrument'], 'chord': ['chord', 'instrument']},
+                   'proprieties': {'note': ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+                                   'instrument': ['piano', 'guitar', 'violin'],
+                                   'chord': ['A', 'B', 'C']}}
     json_string = json.dumps(schema_dict)
     return render(request, 'annotate.html', {'schema': json_string, 'sound_id': sound_id})

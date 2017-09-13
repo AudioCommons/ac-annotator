@@ -7,38 +7,8 @@
 {% block extra_head %}
 <script type="text/javascript">
     var schema = JSON.parse('{{schema | escapejs}}');
-    var form = document.createElement("form");
-    form.setAttribute('method',"post");
-    form.setAttribute('action',"");
-
-    // SIMPLE FORM FOR NOW
-    //create input element
-    var i = document.createElement("input");
-    i.type = "text";
-    i.name = "user_name";
-    i.id = "user_name1";
-
-    //create a checkbox
-    var c = document.createElement("input");
-    c.type = "checkbox";
-    c.id = "checkbox1";
-    c.name = "check1";
-
-    //create a button
-    var s = document.createElement("input");
-    s.type = "submit";
-    s.value = "Submit";
-
-    // add all elements to the form
-    form.appendChild(i);
-    form.appendChild(c);
-    form.appendChild(s);
-
-    $(document).ready(function() {
-        $("#form_container").append(form);
-    });
-
 </script>
+<script src="{% static 'js/create_form.js' %}" type="text/javascript"></script>
 {% endblock %}
 
 
@@ -50,6 +20,7 @@
     </div>
     <div id="form_container">
     </div>
+    <button onclick="collectAll();">SUBMIT ALL</button>
 </div>
 {% endblock %}
 
