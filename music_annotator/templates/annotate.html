@@ -3,22 +3,54 @@
 {% load annotator_templatetags %}
 {% block title %}Annotate{% endblock title %}
 
-{% block content %}
-    <h1 class="ui header">Choose a sound to annotate</h1>
-        <table class="ui unstackable table" width="100%">
-            <thead>
-                <tr>
-                    <th>Sound</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for fsid in freesound_ids %}
-                    <tr>
-                        <td>{{ fsid | fs_embed | safe }}</td>
-                        <td><a class="ui button" href="" target="_blank">Annotate</a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+
+{% block extra_head %}
+<script type="text/javascript">
+    var schema = JSON.parse('{{schema | escapejs}}');
+    var form = document.createElement("form");
+    form.setAttribute('method',"post");
+    form.setAttribute('action',"");
+
+    // SIMPLE FORM FOR NOW
+    //create input element
+    var i = document.createElement("input");
+    i.type = "text";
+    i.name = "user_name";
+    i.id = "user_name1";
+
+    //create a checkbox
+    var c = document.createElement("input");
+    c.type = "checkbox";
+    c.id = "checkbox1";
+    c.name = "check1";
+
+    //create a button
+    var s = document.createElement("input");
+    s.type = "submit";
+    s.value = "Submit";
+
+    // add all elements to the form
+    form.appendChild(i);
+    form.appendChild(c);
+    form.appendChild(s);
+
+    $(document).ready(function() {
+        $("#form_container").append(form);
+    });
+
+</script>
 {% endblock %}
+
+
+{% block content %}
+<h1 class="ui header">Annotate the sound</h1>
+<div>
+    <div>
+        {{ sound_id | fs_embed | safe }}
+    </div>
+    <div id="form_container">
+    </div>
+</div>
+{% endblock %}
+
+

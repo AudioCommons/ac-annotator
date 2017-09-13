@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
     <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'semanticui/semantic.min.js' %}" type="text/javascript"></script>
+    {% block extra_head %}
+    {% endblock extra_head%}
     <title>Audio Commons Annotator</title>
 </head>
 <body>

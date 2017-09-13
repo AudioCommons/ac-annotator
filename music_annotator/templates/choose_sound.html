@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load annotator_templatetags %}
+{% block title %}Annotate{% endblock title %}
+
+{% block content %}
+    <h1 class="ui header">Choose a sound to annotate</h1>
+        <table class="ui unstackable table" width="100%">
+            <thead>
+                <tr>
+                    <th>Sound</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fsid in freesound_ids %}
+                    <tr>
+                        <td>{{ fsid | fs_embed | safe }}</td>
+                        <td><a class="ui button" href="" target="_blank">Annotate</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
