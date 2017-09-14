@@ -3,6 +3,7 @@ function create_choice_form(label_name, propriety_name, choices) {
     form.setAttribute('id', propriety_name);
     var label = document.createElement("label");
     label.innerHTML = label_name;
+    label.style.fontWeight= '600';
     form.append(label);
     var break_line = document.createElement("br");
     form.append(break_line);
@@ -28,11 +29,11 @@ function create_data_list_form(label_name, propriety_name, choices) {
     form.setAttribute('onsubmit', "return false");
     var label = document.createElement("label");
     label.innerHTML = label_name;
+    label.setAttribute('for', 'choice_' + propriety_name)
     form.append(label);
-    var break_line = document.createElement("br");
-    form.append(break_line);
     var select = document.createElement("select");
     select.setAttribute('id', 'choice_' + propriety_name);
+    select.setAttribute('name', 'choice_' + propriety_name);
     for (var i = 0, length = choices.length; i < length; i++) {
         var option = document.createElement("option");
         option.value = choices[i];

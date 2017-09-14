@@ -61,3 +61,16 @@ ul {
 	list-style: none;
     margin-left: -40px;
 }
+
+form {
+    display: inline;
+    padding: 10px;
+}
+
+label {
+    padding: 3px;
+}
+
+form label {
+    font-weight: 400;
+}
