@@ -22,6 +22,27 @@ function create_choice_form(label_name, propriety_name, choices) {
     return form;
 }
 
+function create_data_list_form(label_name, propriety_name, choices) {
+    var form = document.createElement("form");
+    form.setAttribute('id', propriety_name);
+    form.setAttribute('onsubmit', "return false");
+    var label = document.createElement("label");
+    label.innerHTML = label_name;
+    form.append(label);
+    var break_line = document.createElement("br");
+    form.append(break_line);
+    var select = document.createElement("select");
+    select.setAttribute('id', 'choice_' + propriety_name);
+    for (var i = 0, length = choices.length; i < length; i++) {
+        var option = document.createElement("option");
+        option.value = choices[i];
+        option.innerHTML = choices[i];
+        select.appendChild(option);
+    }
+    form.append(select);
+    return form
+}
+
 function create_final_form(schema, content_type) {
     var global_form = document.createElement("form");
     var content_types = Object.keys(schema.content_types);
@@ -34,14 +55,20 @@ function create_final_form(schema, content_type) {
     for (var i = 0, length = proprieties.length; i < length; i++) {
         propriety = proprieties[i];
         choices = schema.proprieties[schema.content_types[content_type][i]];
-        form = create_choice_form(propriety, propriety, choices);
+        //form = create_choice_form(propriety, propriety, choices);
+        form = create_data_list_form(propriety, propriety, choices);
         global_form.appendChild(form)
     }
     return global_form;
 }
 
-function collect_all(){
-    var result = $('form').serializeArray();
+function collect_all(schema){
+    var content_type_result = $('#content_type').serializeArray()[0]["value"];
+    var result = {'content_type': content_type_result};
+    var proprieties = schema.content_types[content_type_result];
+    for (var i = 0, length = proprieties.length; i < length; i++) {
+        result[proprieties[i]] = $('#choice_'+proprieties[i]).val();
+    }
     // ADD AJAX POST HERE TO SEND RESULTS TO SERVER
     console.log(result);
 }
