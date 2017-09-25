@@ -18,7 +18,7 @@ def annotate(request, fsid):
                                      'melody': ['instrument', 'mood', 'genre'], 'chord progression': ['mood', 'genre'],
                                      'percussive hit': ['percussion'], 'rhythm pattern': ['mood', 'genre'],
                                      'musical loop': ['mood', 'genre'], 'texture/drone': ['mood', 'genre']},
-                   'proprieties': {'note': ['C', 'C#/D♭', 'D', 'D#/E♭', 'E', 'F', 'F#/G♭', 'G', 'G#/A♭', 'A', 'A#/B♭', 'B'],
+                   'properties': {'note': ['C', 'C#/D♭', 'D', 'D#/E♭', 'E', 'F', 'F#/G♭', 'G', 'G#/A♭', 'A', 'A#/B♭', 'B'],
                                    'instrument': ['piano', 'guitar', 'violin', 'bass', 'accordion', 'saxophone', 'trumpet'],
                                    'chord': ['C', 'C#/D♭', 'D', 'D#/E♭', 'E', 'F', 'F#/G♭', 'G', 'G#/A♭', 'A', 'A#/B♭', 'B'],
                                    'mood': ['happy', 'funny', 'sad', 'tender', 'exciting', 'angry', 'scary'],
