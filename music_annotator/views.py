@@ -15,14 +15,16 @@ def annotate(request, fsid):
 
     # create a fake schema for now
     schema_dict = {'content_types': {'note': ['note', 'instrument'], 'chord': ['chord', 'instrument'],
-                                     'melody': ['instrument', 'mood'], 'chord progression': ['mood'],
-                                     'percussive hit': ['percussion'], 'rhythm pattern': ['mood'],
-                                     'musical loop': ['mood'], 'texture/drone': ['mood']},
+                                     'melody': ['instrument', 'mood', 'genre'], 'chord progression': ['mood', 'genre'],
+                                     'percussive hit': ['percussion'], 'rhythm pattern': ['mood', 'genre'],
+                                     'musical loop': ['mood', 'genre'], 'texture/drone': ['mood', 'genre']},
                    'proprieties': {'note': ['C', 'C#/D♭', 'D', 'D#/E♭', 'E', 'F', 'F#/G♭', 'G', 'G#/A♭', 'A', 'A#/B♭', 'B'],
                                    'instrument': ['piano', 'guitar', 'violin', 'bass', 'accordion', 'saxophone', 'trumpet'],
                                    'chord': ['C', 'C#/D♭', 'D', 'D#/E♭', 'E', 'F', 'F#/G♭', 'G', 'G#/A♭', 'A', 'A#/B♭', 'B'],
                                    'mood': ['happy', 'funny', 'sad', 'tender', 'exciting', 'angry', 'scary'],
                                    'percussion': ['kick', 'snare', 'hi-hat', 'tom', 'crash', 'ride'],
+                                   'genre': ['pop', 'hip hop', 'rock', 'blues', 'soul', 'reggae', 'country', 'funk',
+                                             'folk', 'jazz', 'classical', 'electronic'],
                                    }}
 
     json_string = json.dumps(schema_dict)
