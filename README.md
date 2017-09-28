@@ -28,7 +28,7 @@ cd ac_annotator
 docker-compose up
 ```
 
-Now you should be able to access your server at `https://localhost:8000`
+Now you should be able to access your server at `http://localhost:8000`
 
 
 # License
