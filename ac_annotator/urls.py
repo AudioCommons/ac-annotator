@@ -18,11 +18,15 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from music_annotator.views import *
+from general_annotator.views import *
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
     url(r'^annotate/(?P<fsid>[^\/]+)/$', annotate, name='annotate-sound'),
+    url(r'^generate_annotations/', generate_annotations, name='generate-annotations'),
+    url(r'^taxonomy_table/', taxonomy_table, name='taxonomy-table'),
+    url(r'^hierarchy_path/', get_hierachy_paths, name='get_hierachy_paths'),
 ]
 
