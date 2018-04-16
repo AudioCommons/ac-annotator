@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from music_annotator.views import *
-from general_annotator.views import *
+from annotator.views import *
 
 
 urlpatterns = [

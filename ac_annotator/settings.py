@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'music_annotator',
-    'general_annotator'
+    'annotator'
 ]
 
 MIDDLEWARE = [
