@@ -1,13 +1,20 @@
+**Note:** What's hosted here is work in progress, no functional component is provided.
+However, you can find more elaborated annotation tools at this repository branch: `https://github.com/MTG/freesound-datasets/tree/annotation-tools-FRUCT2018`.
+
 # music-annotator
 
-Music annotator component.
+The music annotator is available directly from `http://localhost:8000`.
+You will be able to choose a sound, and then be directed to a page to annotate it.
 
-**Note:** What's hosted here is work in progress, no functional component is provided yet.
+# annotator
+
+The annotator tool enables users to generate labels from the AudioSet Ontology to Freesound clips.
+You cann access it at for instance from: `http://localhost:8000/generate_annotations/36/`, where the last integer is a Freesound sound id.
 
 
 # Development
 
-The Audio Commons music annotator is a web service written in Python 3 using the Django framework. 
+The Audio Commons Annotator is a web service written in Python 3 using the Django framework. 
 
 The easiest way to set up a local development version is to use Docker container definitions provided in this repository. Below you'll find instructions for setting up the development environment using Docker. We do not provide instructions for manuall installation, but it should not be too complicated.
 
